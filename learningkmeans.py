@@ -1,4 +1,3 @@
-# %%
 from kmeans import kmeans
 import matplotlib.pyplot as plt
 import numpy as np
@@ -48,9 +47,9 @@ class ClusteringKmeans(kmeans):
                 if(i == kmeans.index[j]):
                     temp.append(kmeans.data[j])
                     Datacluster.append(temp)
+            
+            return Datacluster
         
-        return Datacluster
-
 # Main Program
 data = [[1, 2], [3, 4], [2, 3], [9, 2], [8, 9], [2, 6], [8, 1], [9, 5], [8, 9], [5, 8], [8, 8]]
 ncluster = 3
