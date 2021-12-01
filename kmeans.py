@@ -19,6 +19,19 @@ class proses:
                 index=i
                 min=data[i]
         return index
+    
+    def mean(self,data):
+        n=len(data)
+        m=len(data[0])
+        tot=[0]*m
+
+        for i in range (n):
+            for j in range (m):
+                tot[j]=tot[j]+data[i][j]
+        
+        for i in range (m):
+                    tot[i]=tot[i]/n
+        return tot
 
 class kmeans(proses):
     data=[]
@@ -70,15 +83,32 @@ class kmeans(proses):
         for i in range (n):
             error=error+self.jarak[i][self.index[i]]
             kmeans.error=error
-# # Main Program
-# data = [[1, 2], [3, 4], [2, 3], [9, 2], [8, 9], [2, 6], [8, 1], [9, 5], [8, 9], [5, 8], [8, 8]]
-# ncluster = 3
+    
+    def getCentroid(self):
+        n=len(kmeans.jarak)
+        
+        for i in range (self.nCluster):
+            ang=[]
+            for j in range (n):
+                if self.index[j] == i:
+                    ang.append(kmeans.data[j])
+            if ang!=[]:
+                kmeans.centroid[i]=proses.mean(self,ang)
+            else:
+                kmeans.centroid[i]=ang
 
-# # Pembuatan objek dan testing
-# obj_kmeans = kmeans(data, ncluster)
-# obj_kmeans.initCentroidStatic()
-# obj_kmeans.getAllJarak()
-# obj_kmeans.getAnggota()
-# obj_kmeans.getSumOfDistance()
 
-# print("Sum of Distance : ", obj_kmeans.error)
+# Main Program
+data = [[1, 2], [3, 4], [2, 3], [9, 2], [8, 9], [2, 6], [8, 1], [9, 5], [8, 9], [5, 8], [8, 8]]
+ncluster = 3
+
+# Pembuatan objek dan testing
+obj_kmeans = kmeans(data, ncluster)
+obj_kmeans.initCentroidStatic()
+obj_kmeans.getAllJarak()
+obj_kmeans.getAnggota()
+obj_kmeans.getSumOfDistance()
+obj_kmeans.getCentroid()
+
+
+# print("Centroid Baru : ", obj_kmeans.centroid)
