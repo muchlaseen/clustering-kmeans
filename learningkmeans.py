@@ -9,7 +9,7 @@ class ClusteringKmeans(kmeans):
     def __init__(self,data,ncluster):
         kmeans.data=data
         kmeans.nCluster=ncluster
-        kmeans.initCentroidStatic(self)
+        kmeans.initCentroid(self)
         
     def learning(self):
         errorLama=-1
@@ -61,7 +61,7 @@ class ClusteringKmeans(kmeans):
         
 #Main Program
 data=[[1,2],[3,4],[2,3],[9,2],[8,9],[2,6],[8,1],[9,5],[8,9],[5,8],[8,8]]
-ncluster=3
+ncluster=2
 
 #Pembuatan Objek dan pemanggilan method learning 
 objek=ClusteringKmeans(data,ncluster)

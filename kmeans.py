@@ -1,3 +1,4 @@
+# %%
 import math
 import random as rand
 
@@ -64,7 +65,7 @@ class kmeans(proses):
                 [min,max] = proses.getMinMax(self, self.data, j)
                 x.append(rand.randint(min,max))
             cent.append(x)
-        kmeans.centroid = cent;
+        kmeans.centroid = cent
         
     def initCentroidStatic(self):
         arr=[[3,3],[0,1],[8,1]]
