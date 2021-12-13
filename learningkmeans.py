@@ -59,20 +59,20 @@ class ClusteringKmeans(kmeans):
             Datacluster.append(temp)
         return Datacluster
         
-#Main Program
-data=[[1,2],[3,4],[2,3],[9,2],[8,9],[2,6],[8,1],[9,5],[8,9],[5,8],[8,8]]
-ncluster=2
+# #Main Program
+# data=[[1,2],[3,4],[2,3],[9,2],[8,9],[2,6],[8,1],[9,5],[8,9],[5,8],[8,8]]
+# ncluster=2
 
-#Pembuatan Objek dan pemanggilan method learning 
-objek=ClusteringKmeans(data,ncluster)
-objek.learning()
-objek.plottingError()
-objek.scatterDataCentroid()
+# #Pembuatan Objek dan pemanggilan method learning 
+# objek=ClusteringKmeans(data,ncluster)
+# objek.learning()
+# objek.plottingError()
+# objek.scatterDataCentroid()
 
-#Cetak Hasil Utama
-print("centroid =",objek.centroid)
-print("\n index anggota data = ", objek.index)
-print("\n Sum of Distance Semua Iterasi = ",objek.error)
-print("\n Sum Of Distance Akhir =", objek.error[len(objek.error)-1])
+# #Cetak Hasil Utama
+# print("centroid =",objek.centroid)
+# print("\n index anggota data = ", objek.index)
+# print("\n Sum of Distance Semua Iterasi = ",objek.error)
+# print("\n Sum Of Distance Akhir =", objek.error[len(objek.error)-1])
 
 # %%
